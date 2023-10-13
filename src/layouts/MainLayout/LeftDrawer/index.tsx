@@ -3,18 +3,18 @@ import {
     Divider,
     IconButton,
     List,
-    Toolbar,
     Typography,
     styled,
 } from "@mui/material";
 import MuiDrawer from "@mui/material/Drawer";
-
 import {
     mainListItems,
     secondaryListItems,
 } from "pages/dashboard/DashboardComponents/ListItems";
 import React from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+
+import { ReactComponent as LogoWhite } from "assets/logo/logo-white.svg";
 
 interface LeftDrawerProps {
     open: boolean;
@@ -62,7 +62,8 @@ function LeftDrawer(props: LeftDrawerProps) {
                     color: (theme) => theme.palette.common.white,
                 }}
             >
-                {open && (
+                <LogoWhite />
+                {open ? (
                     <Typography
                         sx={{
                             mr: "auto",
@@ -71,11 +72,15 @@ function LeftDrawer(props: LeftDrawerProps) {
                     >
                         Logo
                     </Typography>
+                ) : (
+                    <Typography variant="h3">L</Typography>
                 )}
 
-                <IconButton color="inherit" onClick={setOpen}>
-                    <ChevronLeftIcon />
-                </IconButton>
+                {open && (
+                    <IconButton color="inherit" onClick={setOpen}>
+                        <ChevronLeftIcon />
+                    </IconButton>
+                )}
             </Box>
 
             <List component="nav">
