@@ -14,7 +14,7 @@ import {
 import React from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
-import { ReactComponent as LogoWhite } from "assets/logo/logo-white.svg";
+import logoWhite from "assets/logo/logo-white.svg";
 
 interface LeftDrawerProps {
     open: boolean;
@@ -62,18 +62,23 @@ function LeftDrawer(props: LeftDrawerProps) {
                     color: (theme) => theme.palette.common.white,
                 }}
             >
-                <LogoWhite />
-                {open ? (
-                    <Typography
-                        sx={{
-                            mr: "auto",
-                        }}
-                        variant="h3"
-                    >
-                        Logo
-                    </Typography>
-                ) : (
-                    <Typography variant="h3">L</Typography>
+                <Box
+                    sx={
+                        open
+                            ? {
+                                  width: (theme) => theme.spacing(4),
+                              }
+                            : {
+                                  width: (theme) => theme.spacing(4.5),
+                              }
+                    }
+                >
+                    <img src={logoWhite} alt="logo" className="img-fluid" />
+                </Box>
+                {open && (
+                    <Box sx={{ mr: "auto", ml: 2 }}>
+                        <Typography variant="h3">Logo</Typography>
+                    </Box>
                 )}
 
                 {open && (

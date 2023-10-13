@@ -8,7 +8,7 @@ import Link from "@mui/material/Link";
 import Chart from "./DashboardComponents/Chart";
 import Deposits from "./DashboardComponents/Deposits";
 import Orders from "./DashboardComponents/Orders";
-import Header from "layouts/MainLayout/Header/Header";
+import Header from "layouts/MainLayout/Header";
 import LeftDrawer from "layouts/MainLayout/LeftDrawer";
 
 function Copyright(props: any) {

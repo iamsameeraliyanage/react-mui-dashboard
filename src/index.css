@@ -8,3 +8,9 @@ body {
     height: 100%;
     width: 100%;
 }
+.img-fluid {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
