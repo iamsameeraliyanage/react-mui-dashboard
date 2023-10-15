@@ -49,6 +49,7 @@ const Drawer = styled(MuiDrawer, {
         }),
     },
 }));
+
 function LeftDrawer(props: LeftDrawerProps) {
     const { open, setOpen } = props;
     return (
@@ -57,29 +58,31 @@ function LeftDrawer(props: LeftDrawerProps) {
                 sx={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
                     p: 2,
                     color: (theme) => theme.palette.common.white,
                 }}
             >
                 <Box
-                    sx={
-                        open
-                            ? {
-                                  width: (theme) => theme.spacing(4),
-                              }
-                            : {
-                                  width: (theme) => theme.spacing(4.5),
-                              }
-                    }
+                    sx={{
+                        width: (theme) =>
+                            open ? theme.spacing(4) : theme.spacing(4.5),
+                        mx: open ? 0 : 0.1,
+                        transition: "all 0.3s",
+                    }}
                 >
                     <img src={logoWhite} alt="logo" className="img-fluid" />
                 </Box>
-                {open && (
-                    <Box sx={{ mr: "auto", ml: 2 }}>
-                        <Typography variant="h3">Logo</Typography>
-                    </Box>
-                )}
+
+                <Box
+                    sx={{
+                        mr: "auto",
+                        ml: 2,
+                        width: (theme) => (open ? theme.spacing(6) : 0),
+                        overflow: "hidden",
+                    }}
+                >
+                    <Typography variant="h3">Logo</Typography>
+                </Box>
 
                 {open && (
                     <IconButton color="inherit" onClick={setOpen}>
