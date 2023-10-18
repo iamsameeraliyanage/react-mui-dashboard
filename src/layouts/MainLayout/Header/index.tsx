@@ -2,6 +2,7 @@ import { AppBar, Badge, IconButton, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import UserProfile from "./UserProfile";
 
 interface HeaderProps {
     open: boolean;
@@ -43,6 +44,11 @@ function Header(props: HeaderProps) {
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
+                <UserProfile
+                    userName="JohnDoe"
+                    userImage={""}
+                    userEmail="johndoe@email.com"
+                />
             </Toolbar>
         </AppBar>
     );
